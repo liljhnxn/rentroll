@@ -1,0 +1,12 @@
+node_modules
+.next
+out
+artifacts
+cache
+typechain-types
+typechain
+*.log
+.env
+.env.local
+.DS_Store
+
