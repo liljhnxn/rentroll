@@ -351,6 +351,8 @@ export function RegisterRental({ onSuccessRegistered }: RegisterRentalProps) {
                 rel="noreferrer"
                 className="inline-flex items-center gap-1.5 text-brand-purple hover:underline"
               >
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src="/botchain-logo.png" alt="BOT Chain" className="w-3.5 h-3.5 rounded-xs object-cover" />
                 <span>View on BotchainScan Explorer</span>
                 <ExternalLink className="w-3.5 h-3.5" />
               </a>

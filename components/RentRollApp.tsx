@@ -6,7 +6,7 @@ import { DashboardOverview } from "@/components/DashboardOverview";
 import { RegisterRental } from "@/components/RegisterRental";
 import { RentalLookup } from "@/components/RentalLookup";
 import { MyRentals } from "@/components/MyRentals";
-import { ShieldCheck, ExternalLink, Network, Globe } from "lucide-react";
+import { ShieldCheck, ExternalLink, Network } from "lucide-react";
 import { DEFAULT_CONTRACT_ADDRESS } from "@/lib/contract";
 import { shortenAddress } from "@/lib/utils";
 
@@ -85,8 +85,9 @@ export default function RentRollApp() {
         <section className="mt-8 rounded-2xl bg-gradient-to-r from-charcoal-900 via-charcoal-850 to-charcoal-900 border border-brand-purple/20 p-6 backdrop-blur shadow-lg shadow-brand-purple/5">
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
             <div className="flex items-center gap-4">
-              <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-brand-purple to-brand-purpleDark flex items-center justify-center shadow-lg shadow-brand-purple/25 ring-1 ring-white/10 shrink-0">
-                <Globe className="w-6 h-6 text-white" />
+              <div className="w-12 h-12 rounded-xl bg-charcoal-950 flex items-center justify-center shadow-lg shadow-brand-purple/25 ring-1 ring-white/10 shrink-0 overflow-hidden">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src="/botchain-logo.png" alt="BOT Chain Logo" className="w-full h-full object-cover" />
               </div>
               <div>
                 <div className="flex items-center gap-2.5">
@@ -108,19 +109,23 @@ export default function RentRollApp() {
                 href="https://botchain.ai"
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs font-semibold bg-brand-purple hover:bg-brand-purpleDark text-white shadow-md shadow-brand-purple/20 transition cursor-pointer"
+                className="inline-flex items-center gap-2.5 px-4 py-2.5 rounded-xl text-xs font-semibold bg-brand-purple hover:bg-brand-purpleDark text-white shadow-md shadow-brand-purple/20 transition cursor-pointer"
               >
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src="/botchain-logo.png" alt="BOT Chain" className="w-4 h-4 rounded-xs object-cover" />
                 <span>BOT Chain Website</span>
-                <ExternalLink className="w-3.5 h-3.5" />
+                <ExternalLink className="w-3.5 h-3.5 opacity-80" />
               </a>
               <a
                 href="https://scan.botchain.ai"
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs font-semibold bg-charcoal-800 hover:bg-charcoal-750 text-neutral-200 border border-charcoal-700 hover:border-brand-purple/40 transition cursor-pointer"
+                className="inline-flex items-center gap-2.5 px-4 py-2.5 rounded-xl text-xs font-semibold bg-charcoal-800 hover:bg-charcoal-750 text-neutral-200 border border-charcoal-700 hover:border-brand-purple/40 transition cursor-pointer"
               >
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src="/botchain-logo.png" alt="BOT Chain Explorer" className="w-4 h-4 rounded-xs object-cover" />
                 <span>BOT Chain Explorer</span>
-                <ExternalLink className="w-3.5 h-3.5" />
+                <ExternalLink className="w-3.5 h-3.5 opacity-80" />
               </a>
             </div>
           </div>
@@ -132,8 +137,9 @@ export default function RentRollApp() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row items-center justify-between gap-6 pb-6 border-b border-charcoal-800/80">
             <div className="flex items-center gap-3">
-              <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-brand-purple to-brand-purpleDark flex items-center justify-center ring-1 ring-white/10 shrink-0">
-                <span className="text-white font-black text-xs">BOT</span>
+              <div className="w-9 h-9 rounded-lg bg-charcoal-950 flex items-center justify-center ring-1 ring-white/10 shrink-0 overflow-hidden shadow">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src="/botchain-logo.png" alt="BOT Chain" className="w-full h-full object-cover" />
               </div>
               <div>
                 <div className="flex items-center gap-2">
@@ -149,19 +155,23 @@ export default function RentRollApp() {
                 href="https://botchain.ai"
                 target="_blank"
                 rel="noreferrer"
-                className="flex items-center gap-1.5 text-neutral-300 hover:text-brand-purple transition"
+                className="flex items-center gap-2 text-neutral-300 hover:text-brand-purple transition group"
               >
-                <span>BOT Chain Website</span>
-                <ExternalLink className="w-3 h-3 text-neutral-500" />
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src="/botchain-logo.png" alt="BOT Chain" className="w-4 h-4 rounded-xs object-cover" />
+                <span>BOT Chain Website: https://botchain.ai</span>
+                <ExternalLink className="w-3 h-3 text-neutral-500 group-hover:text-brand-purple" />
               </a>
               <a
                 href="https://scan.botchain.ai"
                 target="_blank"
                 rel="noreferrer"
-                className="flex items-center gap-1.5 text-neutral-300 hover:text-brand-purple transition"
+                className="flex items-center gap-2 text-neutral-300 hover:text-brand-purple transition group"
               >
-                <span>BOT Chain Explorer</span>
-                <ExternalLink className="w-3 h-3 text-neutral-500" />
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src="/botchain-logo.png" alt="BOT Chain Explorer" className="w-4 h-4 rounded-xs object-cover" />
+                <span>BOT Chain Explorer: https://scan.botchain.ai</span>
+                <ExternalLink className="w-3 h-3 text-neutral-500 group-hover:text-brand-purple" />
               </a>
             </div>
           </div>
@@ -183,9 +193,10 @@ export default function RentRollApp() {
                   target="_blank"
                   rel="noreferrer"
                   className="flex items-center gap-1.5 text-neutral-400 hover:text-white transition font-mono"
+                  title="View Verified Mainnet Contract on BotchainScan"
                 >
                   <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-                  <span>Contract: {shortenAddress(DEFAULT_CONTRACT_ADDRESS)}</span>
+                  <span>Mainnet Contract: {shortenAddress(DEFAULT_CONTRACT_ADDRESS)}</span>
                   <ExternalLink className="w-3 h-3" />
                 </a>
               )}

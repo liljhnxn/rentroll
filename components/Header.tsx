@@ -4,6 +4,7 @@ import React, { useState, useEffect } from "react";
 import { useAccount, useConnect, useDisconnect, useSwitchChain } from "wagmi";
 import { botchainMainnet } from "@/lib/chain";
 import { shortenAddress, copyToClipboard } from "@/lib/utils";
+import { DEFAULT_CONTRACT_ADDRESS } from "@/lib/contract";
 import {
   Building2,
   Wallet,
@@ -140,15 +141,58 @@ export function Header() {
                 href="https://scan.botchain.ai"
                 target="_blank"
                 rel="noreferrer"
-                className="text-[11px] font-semibold tracking-wide uppercase px-2 py-0.5 rounded-full bg-charcoal-800 text-brand-purple border border-brand-purple/30 hover:border-brand-purple hover:bg-charcoal-750 transition flex items-center gap-1"
+                className="text-[11px] font-semibold tracking-wide uppercase px-2.5 py-0.5 rounded-full bg-charcoal-800 text-brand-purple border border-brand-purple/30 hover:border-brand-purple hover:bg-charcoal-750 transition flex items-center gap-1.5"
                 title="View BOT Chain Explorer"
               >
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src="/botchain-logo.png" alt="BOT Chain" className="w-3.5 h-3.5 rounded-xs object-cover" />
                 <span>BOT Chain</span>
                 <ExternalLink className="w-2.5 h-2.5 opacity-70" />
               </a>
             </div>
             <p className="text-xs text-neutral-400">Rental records made simple.</p>
           </div>
+        </div>
+
+        {/* Center / Desktop Links: BOT Chain Website & Explorer with Logo */}
+        <div className="hidden md:flex items-center gap-2.5">
+          <a
+            href="https://botchain.ai"
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-charcoal-850 hover:bg-charcoal-800 text-xs font-medium text-neutral-300 hover:text-white border border-charcoal-750 transition cursor-pointer"
+            title="Official BOT Chain Website"
+          >
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/botchain-logo.png" alt="BOT Chain Logo" className="w-4 h-4 rounded-xs object-cover" />
+            <span>BOT Chain</span>
+            <ExternalLink className="w-3 h-3 text-neutral-500" />
+          </a>
+          <a
+            href="https://scan.botchain.ai"
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-charcoal-850 hover:bg-charcoal-800 text-xs font-medium text-neutral-300 hover:text-white border border-charcoal-750 transition cursor-pointer"
+            title="BOT Chain Block Explorer"
+          >
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/botchain-logo.png" alt="BOT Chain Explorer Logo" className="w-4 h-4 rounded-xs object-cover" />
+            <span>Explorer</span>
+            <ExternalLink className="w-3 h-3 text-neutral-500" />
+          </a>
+          {DEFAULT_CONTRACT_ADDRESS && (
+            <a
+              href={`https://scan.botchain.ai/address/${DEFAULT_CONTRACT_ADDRESS}`}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-charcoal-850 hover:bg-charcoal-800 text-[11px] font-mono text-neutral-300 hover:text-white border border-charcoal-750 transition cursor-pointer"
+              title="Verified Mainnet Contract on BotchainScan"
+            >
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+              <span>Mainnet: {shortenAddress(DEFAULT_CONTRACT_ADDRESS)}</span>
+              <ExternalLink className="w-3 h-3 text-neutral-500" />
+            </a>
+          )}
         </div>
 
         {/* Wallet Connection */}
