@@ -6,7 +6,7 @@ import { DashboardOverview } from "@/components/DashboardOverview";
 import { RegisterRental } from "@/components/RegisterRental";
 import { RentalLookup } from "@/components/RentalLookup";
 import { MyRentals } from "@/components/MyRentals";
-import { ShieldCheck, ExternalLink, Network } from "lucide-react";
+import { ShieldCheck, ExternalLink, Network, Globe } from "lucide-react";
 import { DEFAULT_CONTRACT_ADDRESS } from "@/lib/contract";
 import { shortenAddress } from "@/lib/utils";
 
@@ -76,45 +76,120 @@ export default function RentRollApp() {
               <span className="text-neutral-200 font-medium block mb-1">
                 Immutable Payment Records
               </span>
-              Timestamps and payment histories are recorded permanently on the Botchain blockchain, creating dispute-proof proof of payment records.
+              Timestamps and payment histories are recorded permanently on the BOT Chain blockchain, creating dispute-proof proof of payment records.
+            </div>
+          </div>
+        </section>
+
+        {/* BOT Chain Ecosystem Section */}
+        <section className="mt-8 rounded-2xl bg-gradient-to-r from-charcoal-900 via-charcoal-850 to-charcoal-900 border border-brand-purple/20 p-6 backdrop-blur shadow-lg shadow-brand-purple/5">
+          <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
+            <div className="flex items-center gap-4">
+              <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-brand-purple to-brand-purpleDark flex items-center justify-center shadow-lg shadow-brand-purple/25 ring-1 ring-white/10 shrink-0">
+                <Globe className="w-6 h-6 text-white" />
+              </div>
+              <div>
+                <div className="flex items-center gap-2.5">
+                  <h3 className="text-base font-bold text-white tracking-wide">
+                    BOT Chain Ecosystem
+                  </h3>
+                  <span className="text-[10px] font-semibold uppercase px-2 py-0.5 rounded-full bg-brand-purple/20 text-brand-purple border border-brand-purple/40">
+                    Chain ID: 677
+                  </span>
+                </div>
+                <p className="text-xs text-neutral-400 mt-1 max-w-xl">
+                  RentRoll is proudly built on BOT Chain — utilizing fast block finality and low transaction fees to deliver decentralized rental payment verification.
+                </p>
+              </div>
+            </div>
+
+            <div className="flex flex-wrap items-center gap-3">
+              <a
+                href="https://botchain.ai"
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs font-semibold bg-brand-purple hover:bg-brand-purpleDark text-white shadow-md shadow-brand-purple/20 transition cursor-pointer"
+              >
+                <span>BOT Chain Website</span>
+                <ExternalLink className="w-3.5 h-3.5" />
+              </a>
+              <a
+                href="https://scan.botchain.ai"
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs font-semibold bg-charcoal-800 hover:bg-charcoal-750 text-neutral-200 border border-charcoal-700 hover:border-brand-purple/40 transition cursor-pointer"
+              >
+                <span>BOT Chain Explorer</span>
+                <ExternalLink className="w-3.5 h-3.5" />
+              </a>
             </div>
           </div>
         </section>
       </main>
 
       {/* Footer */}
-      <footer className="w-full border-t border-charcoal-800 bg-charcoal-900/40 py-6 mt-16 text-xs text-neutral-400">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <div className="flex items-center gap-2">
-            <span className="font-semibold text-neutral-300">RentRoll</span>
-            <span>— Simple, verifiable on-chain rental payment records.</span>
-          </div>
-
-          <div className="flex items-center gap-5 text-[11px]">
-            <div className="flex items-center gap-1.5 text-neutral-300">
-              <Network className="w-3.5 h-3.5 text-brand-purple" />
-              <span>Botchain Mainnet (Chain ID: 677)</span>
+      <footer className="w-full border-t border-charcoal-800 bg-charcoal-900/60 py-8 mt-16 text-xs text-neutral-400">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-6 pb-6 border-b border-charcoal-800/80">
+            <div className="flex items-center gap-3">
+              <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-brand-purple to-brand-purpleDark flex items-center justify-center ring-1 ring-white/10 shrink-0">
+                <span className="text-white font-black text-xs">BOT</span>
+              </div>
+              <div>
+                <div className="flex items-center gap-2">
+                  <span className="font-semibold text-neutral-200">BOT Chain</span>
+                  <span className="text-[10px] text-brand-purple font-mono bg-charcoal-800 px-2 py-0.5 rounded border border-charcoal-700">Chain ID: 677</span>
+                </div>
+                <p className="text-[11px] text-neutral-500">Decentralized AI & smart contracts network</p>
+              </div>
             </div>
-            {DEFAULT_CONTRACT_ADDRESS !== "0x0000000000000000000000000000000000000000" && (
+
+            <div className="flex flex-wrap items-center gap-5 text-xs font-medium">
               <a
-                href={`https://scan.botchain.ai/address/${DEFAULT_CONTRACT_ADDRESS}`}
+                href="https://botchain.ai"
                 target="_blank"
                 rel="noreferrer"
-                className="flex items-center gap-1 text-neutral-400 hover:text-white transition font-mono"
+                className="flex items-center gap-1.5 text-neutral-300 hover:text-brand-purple transition"
               >
-                <span>Contract: {shortenAddress(DEFAULT_CONTRACT_ADDRESS)}</span>
-                <ExternalLink className="w-3 h-3" />
+                <span>BOT Chain Website</span>
+                <ExternalLink className="w-3 h-3 text-neutral-500" />
               </a>
-            )}
-            <a
-              href="https://scan.botchain.ai"
-              target="_blank"
-              rel="noreferrer"
-              className="flex items-center gap-1 text-neutral-400 hover:text-white transition"
-            >
-              <span>BotchainScan Explorer</span>
-              <ExternalLink className="w-3 h-3" />
-            </a>
+              <a
+                href="https://scan.botchain.ai"
+                target="_blank"
+                rel="noreferrer"
+                className="flex items-center gap-1.5 text-neutral-300 hover:text-brand-purple transition"
+              >
+                <span>BOT Chain Explorer</span>
+                <ExternalLink className="w-3 h-3 text-neutral-500" />
+              </a>
+            </div>
+          </div>
+
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-6 text-[11px]">
+            <div className="flex items-center gap-2">
+              <span className="font-semibold text-neutral-300">RentRoll</span>
+              <span>— Simple, verifiable on-chain rental payment records on BOT Chain.</span>
+            </div>
+
+            <div className="flex items-center gap-4">
+              <div className="flex items-center gap-1.5 text-neutral-400">
+                <Network className="w-3.5 h-3.5 text-brand-purple" />
+                <span>BOT Chain (677)</span>
+              </div>
+              {DEFAULT_CONTRACT_ADDRESS !== "0x0000000000000000000000000000000000000000" && (
+                <a
+                  href={`https://scan.botchain.ai/address/${DEFAULT_CONTRACT_ADDRESS}`}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="flex items-center gap-1.5 text-neutral-400 hover:text-white transition font-mono"
+                >
+                  <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+                  <span>Contract: {shortenAddress(DEFAULT_CONTRACT_ADDRESS)}</span>
+                  <ExternalLink className="w-3 h-3" />
+                </a>
+              )}
+            </div>
           </div>
         </div>
       </footer>

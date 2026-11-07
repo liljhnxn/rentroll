@@ -4,8 +4,9 @@
 **Version:** 1.0  
 **Date:** November 2026  
 **Network:** Botchain Mainnet (Chain ID: 677)  
-**Mainnet Smart Contract:** [`0x3F61d8C503CAA6CF6a785a253bFd3895b49790f8`](https://scan.botchain.ai/address/0x3F61d8C503CAA6CF6a785a253bFd3895b49790f8#code)  
-**Testnet Smart Contract:** [`0xDfA9407DD6D940A4613E07c73f2ef838cc64Da15`](https://scan.bohr.life/address/0xDfA9407DD6D940A4613E07c73f2ef838cc64Da15#code)  
+**Smart Contract:** [`0x3F61d8C503CAA6CF6a785a253bFd3895b49790f8`](https://scan.botchain.ai/address/0x3F61d8C503CAA6CF6a785a253bFd3895b49790f8#code)  
+**BOT Chain Website:** [https://botchain.ai](https://botchain.ai)  
+**BOT Chain Explorer:** [https://scan.botchain.ai](https://scan.botchain.ai)  
 **Repository:** [https://github.com/liljhnxn/rentroll.git](https://github.com/liljhnxn/rentroll.git)  
 
 ---
@@ -52,9 +53,9 @@ RentRoll decouples payment verification from fund custody and personal identific
                         wagmi / viem
                                |
 +------------------------------v------------------------------+
-|                     Botchain Testnet                        |
-|                     RPC: https://rpc.bohr.life              |
-|                     Chain ID: 968                           |
+|                     BOT Chain Mainnet                       |
+|                     RPC: https://rpc.botchain.ai            |
+|                     Chain ID: 677                           |
 +------------------------------+------------------------------+
                                |
 +------------------------------v------------------------------+
@@ -101,7 +102,7 @@ struct Rental {
 - **Development Tooling**: Hardhat, Ethers v6, TypeChain
 - **Frontend Framework**: Next.js 15 (App Router, TypeScript, Tailwind CSS)
 - **Web3 Layer**: wagmi v2, viem, MetaMask Injected Connector
-- **Blockchain**: Botchain Testnet (Chain ID `968`, BohrScan explorer)
+- **Blockchain**: BOT Chain Mainnet (Chain ID `677`, BotchainScan explorer)
 
 ---
 
@@ -118,8 +119,7 @@ struct Rental {
 ### Phase 1: Core Foundation (Current)
 - [x] Solidity smart contract architecture with custom errors & events.
 - [x] Hardhat automated test suite (15/15 passing).
-- [x] Deployment & source code verification on Botchain Mainnet (`0x3F61d8C503CAA6CF6a785a253bFd3895b49790f8`).
-- [x] Deployment & source code verification on Botchain Testnet (`0xDfA9407DD6D940A4613E07c73f2ef838cc64Da15`).
+- [x] Deployment & source code verification on BOT Chain Mainnet (`0x3F61d8C503CAA6CF6a785a253bFd3895b49790f8`).
 - [x] Responsive Next.js frontend with dark charcoal UI, live stats, and public lookup.
 
 ### Phase 2: Automation & Notifications
@@ -135,8 +135,9 @@ struct Rental {
 
 ## 8. Deployment & Reference Links
 
-- **Mainnet Verified Contract**: [`0x3F61d8C503CAA6CF6a785a253bFd3895b49790f8`](https://scan.botchain.ai/address/0x3F61d8C503CAA6CF6a785a253bFd3895b49790f8#code)
-- **Mainnet Explorer**: [https://scan.botchain.ai](https://scan.botchain.ai)
-- **Network**: Botchain Mainnet | Chain ID: `677` | Currency: `BOT` | RPC: `https://rpc.botchain.ai`
+- **BOT Chain Website**: [https://botchain.ai](https://botchain.ai)
+- **BOT Chain Explorer**: [https://scan.botchain.ai](https://scan.botchain.ai)
+- **Verified Contract**: [`0x3F61d8C503CAA6CF6a785a253bFd3895b49790f8`](https://scan.botchain.ai/address/0x3F61d8C503CAA6CF6a785a253bFd3895b49790f8#code)
+- **Network**: BOT Chain Mainnet | Chain ID: `677` | Currency: `BOT` | RPC: `https://rpc.botchain.ai`
 - **Source Code**: [https://github.com/liljhnxn/rentroll.git](https://github.com/liljhnxn/rentroll.git)
 

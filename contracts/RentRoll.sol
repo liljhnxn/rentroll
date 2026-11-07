@@ -3,7 +3,7 @@ pragma solidity ^0.8.24;
 
 /**
  * @title RentRoll
- * @dev On-chain rental payment record dApp for landlords and tenants on Botchain Testnet.
+ * @dev On-chain rental payment record dApp for landlords and tenants on BOT Chain.
  * Records payment statuses without storing sensitive tenant PII on-chain.
  */
 contract RentRoll {

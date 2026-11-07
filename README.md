@@ -18,17 +18,18 @@ Landlords can register rental units using anonymous unit references, define rent
 
 ---
 
-## ⚡ Blockchain Configuration (Botchain Mainnet)
+## ⚡ Blockchain Configuration (BOT Chain Mainnet)
 
-| Parameter | Mainnet (Active) | Testnet |
-|---|---|---|
-| **Network Name** | Botchain Mainnet | Botchain Testnet |
-| **Chain ID** | `677` (`0x2a5`) | `968` (`0x3c8`) |
-| **Currency Symbol** | `BOT` | `BOHR` |
-| **Total Supply** | 150 Million BOT | — |
-| **RPC Endpoint** | `https://rpc.botchain.ai` | `https://rpc.bohr.life` |
-| **Block Explorer** | [https://scan.botchain.ai](https://scan.botchain.ai) | [https://scan.bohr.life](https://scan.bohr.life) |
-| **Verified Contract** | [`0x3F61d8C503CAA6CF6a785a253bFd3895b49790f8`](https://scan.botchain.ai/address/0x3F61d8C503CAA6CF6a785a253bFd3895b49790f8#code) | [`0xDfA9407DD6D940A4613E07c73f2ef838cc64Da15`](https://scan.bohr.life/address/0xDfA9407DD6D940A4613E07c73f2ef838cc64Da15#code) |
+| Parameter | BOT Chain Mainnet |
+|---|---|
+| **Network Name** | BOT Chain Mainnet |
+| **Chain ID** | `677` (`0x2a5`) |
+| **Currency Symbol** | `BOT` |
+| **Total Supply** | 150 Million BOT |
+| **RPC Endpoint** | `https://rpc.botchain.ai` |
+| **BOT Chain Website** | [https://botchain.ai](https://botchain.ai) |
+| **BOT Chain Explorer** | [https://scan.botchain.ai](https://scan.botchain.ai) |
+| **Verified Contract** | [`0x3F61d8C503CAA6CF6a785a253bFd3895b49790f8`](https://scan.botchain.ai/address/0x3F61d8C503CAA6CF6a785a253bFd3895b49790f8#code) |
 
 ---
 
@@ -62,16 +63,16 @@ Rentroll/
 ├── contracts/
 │   └── RentRoll.sol         # Solidity smart contract
 ├── scripts/
-│   └── deploy.ts            # Hardhat deployment script for Botchain Testnet
+│   └── deploy.ts            # Hardhat deployment script for BOT Chain Mainnet
 ├── test/
 │   └── RentRoll.test.ts     # Automated Hardhat unit tests (15 test scenarios)
 ├── lib/
-│   ├── chain.ts             # Botchain Testnet viem chain definition
+│   ├── chain.ts             # BOT Chain Mainnet viem chain definition
 │   ├── contract.ts          # Contract ABI and address configuration
 │   ├── types.ts             # TypeScript interfaces and enum definitions
 │   ├── utils.ts             # Currency formatting, date parsing, copy-to-clipboard
 │   └── wagmi.ts             # Wagmi client configuration
-├── hardhat.config.ts        # Hardhat configuration with Botchain network setup
+├── hardhat.config.ts        # Hardhat configuration with BOT Chain network setup
 ├── tailwind.config.ts       # Tailwind theme colors and charcoal palette
 ├── tsconfig.json            # TypeScript configuration
 └── package.json             # Scripts and dependencies
@@ -83,11 +84,12 @@ Rentroll/
 
 ### 1. Prerequisites
 - [Node.js](https://nodejs.org/) (v18+ recommended)
-- [MetaMask](https://metamask.io/) browser extension configured with Botchain Testnet:
-  - Network Name: `Botchain Testnet`
-  - RPC URL: `https://rpc.bohr.life`
-  - Chain ID: `968`
-  - Symbol: `BOHR`
+- [MetaMask](https://metamask.io/) browser extension configured with BOT Chain Mainnet:
+  - Network Name: `BOT Chain`
+  - RPC URL: `https://rpc.botchain.ai`
+  - Chain ID: `677`
+  - Symbol: `BOT`
+  - Block Explorer URL: `https://scan.botchain.ai`
 
 ### 2. Installation
 ```bash
@@ -102,8 +104,8 @@ cp .env.example .env
 Populate `.env` with your deployment private key and deployed contract address:
 ```ini
 PRIVATE_KEY=your_private_key_here
-BOTCHAIN_RPC_URL=https://rpc.bohr.life
-NEXT_PUBLIC_CONTRACT_ADDRESS=
+BOTCHAIN_RPC_URL=https://rpc.botchain.ai
+NEXT_PUBLIC_CONTRACT_ADDRESS=0x3F61d8C503CAA6CF6a785a253bFd3895b49790f8
 ```
 
 ---
@@ -140,19 +142,12 @@ npm run test
 
 ## 📦 Smart Contract Deployment
 
-### Mainnet (Chain ID 677)
 ```bash
 npm run deploy:mainnet
 npm run verify:mainnet <CONTRACT_ADDRESS>
 ```
 
-### Testnet (Chain ID 968)
-```bash
-npm run deploy:testnet
-npm run verify:testnet <CONTRACT_ADDRESS>
-```
-   ```
-4. The script deploys `RentRoll.sol` to Botchain Testnet, logs the deployed address, and automatically updates `NEXT_PUBLIC_CONTRACT_ADDRESS` in `.env`.
+The script deploys `RentRoll.sol` to BOT Chain Mainnet, logs the deployed address, and automatically updates `NEXT_PUBLIC_CONTRACT_ADDRESS` in `.env`.
 
 ---
 
@@ -175,15 +170,15 @@ npm run start
 ## 📱 User Walkthrough
 
 1. **Dashboard Overview**:
-   - View total units, active paid rentals, unpaid rentals, and total recorded rent volume directly from the Botchain blockchain.
+   - View total units, active paid rentals, unpaid rentals, and total recorded rent volume directly from the BOT Chain blockchain.
 2. **Connect Wallet**:
-   - Click **Connect Wallet** in the header. If connected to another chain, click **Switch to Botchain (968)**.
+   - Click **Connect Wallet** in the header. If connected to another chain, click **Switch to BOT Chain (677)**.
 3. **Register a Rental Unit**:
    - Enter an anonymous unit identifier (e.g. `Unit 2A - Westside`).
-   - Enter rent amount in `BOHR`.
+   - Enter rent amount in `BOT`.
    - Choose a future payment due date.
    - Click **Register Rental** and confirm the transaction in MetaMask.
-   - Once confirmed, copy your newly generated **Rental ID** and view the transaction on BohrScan.
+   - Once confirmed, copy your newly generated **Rental ID** and view the transaction on BotchainScan.
 4. **Public Record Lookup**:
    - Without connecting any wallet, enter any Rental ID in the **Rental Record Lookup** box.
    - View verified on-chain payment status, due date, landlord address, and last payment timestamp.
@@ -192,6 +187,15 @@ npm run start
      - Click **Mark Paid** when rent is received to update status and timestamp.
      - Click **Mark Unpaid** if a new billing cycle begins.
      - Click **Edit Rent & Due Date** to modify the terms for the next cycle.
+
+---
+
+## 🌐 Official BOT Chain Links
+
+- **BOT Chain Website**: [https://botchain.ai](https://botchain.ai)
+- **BOT Chain Explorer**: [https://scan.botchain.ai](https://scan.botchain.ai)
+- **Verified Smart Contract**: [`0x3F61d8C503CAA6CF6a785a253bFd3895b49790f8`](https://scan.botchain.ai/address/0x3F61d8C503CAA6CF6a785a253bFd3895b49790f8#code)
+- **GitHub Repository**: [https://github.com/liljhnxn/rentroll.git](https://github.com/liljhnxn/rentroll.git)
 
 ---
 

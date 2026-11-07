@@ -106,7 +106,7 @@ export function Header() {
               params: [
                 {
                   chainId: "0x2a5",
-                  chainName: "Botchain Mainnet",
+                  chainName: "BOT Chain",
                   nativeCurrency: {
                     name: "BOT",
                     symbol: "BOT",
@@ -136,9 +136,16 @@ export function Header() {
           <div>
             <div className="flex items-center gap-2">
               <span className="text-xl font-bold tracking-tight text-white">RentRoll</span>
-              <span className="text-[11px] font-medium tracking-wide uppercase px-2 py-0.5 rounded-full bg-charcoal-800 text-brand-purple border border-brand-purple/30">
-                Botchain Mainnet
-              </span>
+              <a
+                href="https://scan.botchain.ai"
+                target="_blank"
+                rel="noreferrer"
+                className="text-[11px] font-semibold tracking-wide uppercase px-2 py-0.5 rounded-full bg-charcoal-800 text-brand-purple border border-brand-purple/30 hover:border-brand-purple hover:bg-charcoal-750 transition flex items-center gap-1"
+                title="View BOT Chain Explorer"
+              >
+                <span>BOT Chain</span>
+                <ExternalLink className="w-2.5 h-2.5 opacity-70" />
+              </a>
             </div>
             <p className="text-xs text-neutral-400">Rental records made simple.</p>
           </div>
@@ -154,7 +161,7 @@ export function Header() {
               className="inline-flex items-center gap-2 px-3 py-2 text-xs font-semibold rounded-lg bg-amber-500/10 text-amber-300 border border-amber-500/30 hover:bg-amber-500/20 transition-all cursor-pointer"
             >
               <AlertTriangle className="w-4 h-4 text-amber-400" />
-              <span>{isSwitching ? "Switching..." : "Switch to Botchain (677)"}</span>
+              <span>{isSwitching ? "Switching..." : "Switch to BOT Chain (677)"}</span>
             </button>
           )}
 
