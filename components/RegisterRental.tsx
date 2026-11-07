@@ -10,7 +10,7 @@ import {
 } from "wagmi";
 import { parseEther, decodeEventLog } from "viem";
 import { RENT_ROLL_ABI, DEFAULT_CONTRACT_ADDRESS } from "@/lib/contract";
-import { botchainTestnet } from "@/lib/chain";
+import { botchainMainnet } from "@/lib/chain";
 import { copyToClipboard, parseContractError } from "@/lib/utils";
 import {
   PlusCircle,
@@ -47,7 +47,7 @@ export function RegisterRental({ onSuccessRegistered }: RegisterRentalProps) {
   const [registeredRentalId, setRegisteredRentalId] = useState<string | null>(null);
   const [copiedId, setCopiedId] = useState(false);
 
-  const isWrongNetwork = isConnected && chain?.id !== botchainTestnet.id;
+  const isWrongNetwork = isConnected && chain?.id !== botchainMainnet.id;
 
   const {
     data: txHash,
@@ -185,7 +185,7 @@ export function RegisterRental({ onSuccessRegistered }: RegisterRentalProps) {
                 const target = connectors.find((c) => c.id === "injected" || c.id === "metaMask") || connectors[0];
                 if (target) {
                   try {
-                    await connectAsync({ connector: target, chainId: botchainTestnet.id });
+                    await connectAsync({ connector: target, chainId: botchainMainnet.id });
                   } catch (e) {
                     console.error(e);
                   }
@@ -207,14 +207,14 @@ export function RegisterRental({ onSuccessRegistered }: RegisterRentalProps) {
           <AlertCircle className="w-8 h-8 text-amber-400 mx-auto mb-2" />
           <h4 className="text-sm font-medium text-amber-200">Incorrect Network</h4>
           <p className="text-xs text-amber-300/80 max-w-sm mx-auto mt-1 mb-3">
-            Please switch to Botchain Testnet (Chain ID 968) to register rental units.
+            Please switch to Botchain Mainnet (Chain ID 677) to register rental units.
           </p>
           <button
             type="button"
-            onClick={() => switchChain?.({ chainId: botchainTestnet.id })}
+            onClick={() => switchChain?.({ chainId: botchainMainnet.id })}
             className="px-4 py-2 rounded-lg bg-amber-500 hover:bg-amber-600 text-charcoal-950 font-semibold text-xs transition cursor-pointer"
           >
-            Switch to Botchain Testnet
+            Switch to Botchain Mainnet
           </button>
         </div>
       ) : (
@@ -243,7 +243,7 @@ export function RegisterRental({ onSuccessRegistered }: RegisterRentalProps) {
             <div>
               <label className="block text-xs font-medium text-neutral-300 mb-1.5 flex items-center gap-1.5">
                 <Coins className="w-3.5 h-3.5 text-neutral-400" />
-                Rent Amount (BOHR)
+                Rent Amount (BOT)
               </label>
               <input
                 type="number"
@@ -346,12 +346,12 @@ export function RegisterRental({ onSuccessRegistered }: RegisterRentalProps) {
           <div className="flex flex-wrap items-center justify-between gap-2 text-xs pt-2 border-t border-charcoal-750">
             {txHash && (
               <a
-                href={`https://scan.bohr.life/tx/${txHash}`}
+                href={`https://scan.botchain.ai/tx/${txHash}`}
                 target="_blank"
                 rel="noreferrer"
                 className="inline-flex items-center gap-1.5 text-brand-purple hover:underline"
               >
-                <span>View on BohrScan Explorer</span>
+                <span>View on BotchainScan Explorer</span>
                 <ExternalLink className="w-3.5 h-3.5" />
               </a>
             )}

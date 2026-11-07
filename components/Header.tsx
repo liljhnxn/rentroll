@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import { useAccount, useConnect, useDisconnect, useSwitchChain } from "wagmi";
-import { botchainTestnet } from "@/lib/chain";
+import { botchainMainnet } from "@/lib/chain";
 import { shortenAddress, copyToClipboard } from "@/lib/utils";
 import {
   Building2,
@@ -33,7 +33,7 @@ export function Header() {
     setMounted(true);
   }, []);
 
-  const isWrongNetwork = mounted && isConnected && chain?.id !== botchainTestnet.id;
+  const isWrongNetwork = mounted && isConnected && chain?.id !== botchainMainnet.id;
 
   const handleCopy = async () => {
     if (!address) return;
@@ -69,7 +69,7 @@ export function Header() {
       if (targetConnector) {
         await connectAsync({
           connector: targetConnector,
-          chainId: botchainTestnet.id,
+          chainId: botchainMainnet.id,
         });
       } else {
         // Fallback: direct window.ethereum request
@@ -91,12 +91,12 @@ export function Header() {
   const handleSwitchNetwork = async () => {
     try {
       if (switchChain) {
-        await switchChain({ chainId: botchainTestnet.id });
+        await switchChain({ chainId: botchainMainnet.id });
       } else if (typeof window !== "undefined" && (window as any).ethereum) {
         try {
           await (window as any).ethereum.request({
             method: "wallet_switchEthereumChain",
-            params: [{ chainId: "0x3c8" }], // 968 in hex
+            params: [{ chainId: "0x2a5" }], // 677 in hex
           });
         } catch (switchErr: any) {
           // If error 4902, chain has not been added to MetaMask yet
@@ -105,15 +105,15 @@ export function Header() {
               method: "wallet_addEthereumChain",
               params: [
                 {
-                  chainId: "0x3c8",
-                  chainName: "Botchain Testnet",
+                  chainId: "0x2a5",
+                  chainName: "Botchain Mainnet",
                   nativeCurrency: {
-                    name: "BOHR",
-                    symbol: "BOHR",
+                    name: "BOT",
+                    symbol: "BOT",
                     decimals: 18,
                   },
-                  rpcUrls: ["https://rpc.bohr.life"],
-                  blockExplorerUrls: ["https://scan.bohr.life"],
+                  rpcUrls: ["https://rpc.botchain.ai"],
+                  blockExplorerUrls: ["https://scan.botchain.ai"],
                 },
               ],
             });
@@ -137,7 +137,7 @@ export function Header() {
             <div className="flex items-center gap-2">
               <span className="text-xl font-bold tracking-tight text-white">RentRoll</span>
               <span className="text-[11px] font-medium tracking-wide uppercase px-2 py-0.5 rounded-full bg-charcoal-800 text-brand-purple border border-brand-purple/30">
-                Botchain Testnet
+                Botchain Mainnet
               </span>
             </div>
             <p className="text-xs text-neutral-400">Rental records made simple.</p>
@@ -154,7 +154,7 @@ export function Header() {
               className="inline-flex items-center gap-2 px-3 py-2 text-xs font-semibold rounded-lg bg-amber-500/10 text-amber-300 border border-amber-500/30 hover:bg-amber-500/20 transition-all cursor-pointer"
             >
               <AlertTriangle className="w-4 h-4 text-amber-400" />
-              <span>{isSwitching ? "Switching..." : "Switch to Botchain (968)"}</span>
+              <span>{isSwitching ? "Switching..." : "Switch to Botchain (677)"}</span>
             </button>
           )}
 

@@ -144,7 +144,7 @@ export function EditRentalModal({
             <div>
               <label className="block text-xs font-medium text-neutral-300 mb-1 flex items-center gap-1.5">
                 <Coins className="w-3.5 h-3.5 text-neutral-400" />
-                Rent Amount (BOHR)
+                Rent Amount (BOT)
               </label>
               <input
                 type="number"

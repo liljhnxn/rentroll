@@ -1,7 +1,7 @@
 # RentRoll 🏠⛓️
 
 > **Rental records made simple.**  
-> A lightweight, transparent on-chain rental payment record dApp designed for landlords, property managers, and tenants on **Botchain Testnet**.
+> A lightweight, transparent on-chain rental payment record dApp designed for landlords, property managers, and tenants on **Botchain Mainnet**.
 
 ---
 
@@ -18,15 +18,17 @@ Landlords can register rental units using anonymous unit references, define rent
 
 ---
 
-## ⚡ Blockchain Configuration (Botchain Testnet)
+## ⚡ Blockchain Configuration (Botchain Mainnet)
 
-| Parameter | Value |
-|---|---|
-| **Network Name** | Botchain Testnet |
-| **Chain ID** | `968` (`0x3c8`) |
-| **Currency Symbol** | `BOHR` |
-| **RPC Endpoint** | `https://rpc.bohr.life` |
-| **Block Explorer** | [https://scan.bohr.life](https://scan.bohr.life) |
+| Parameter | Mainnet (Active) | Testnet |
+|---|---|---|
+| **Network Name** | Botchain Mainnet | Botchain Testnet |
+| **Chain ID** | `677` (`0x2a5`) | `968` (`0x3c8`) |
+| **Currency Symbol** | `BOT` | `BOHR` |
+| **Total Supply** | 150 Million BOT | — |
+| **RPC Endpoint** | `https://rpc.botchain.ai` | `https://rpc.bohr.life` |
+| **Block Explorer** | [https://scan.botchain.ai](https://scan.botchain.ai) | [https://scan.bohr.life](https://scan.bohr.life) |
+| **Verified Contract** | [`0x3F61d8C503CAA6CF6a785a253bFd3895b49790f8`](https://scan.botchain.ai/address/0x3F61d8C503CAA6CF6a785a253bFd3895b49790f8#code) | [`0xDfA9407DD6D940A4613E07c73f2ef838cc64Da15`](https://scan.bohr.life/address/0xDfA9407DD6D940A4613E07c73f2ef838cc64Da15#code) |
 
 ---
 
@@ -136,16 +138,19 @@ npm run test
 
 ---
 
-## 📦 Smart Contract Deployment to Botchain Testnet
+## 📦 Smart Contract Deployment
 
-1. Ensure your deployer account has testnet `BOHR` tokens on Botchain Testnet.
-2. Set your private key in `.env`:
-   ```ini
-   PRIVATE_KEY=0x...
-   ```
-3. Run the deployment script:
-   ```bash
-   npm run deploy
+### Mainnet (Chain ID 677)
+```bash
+npm run deploy:mainnet
+npm run verify:mainnet <CONTRACT_ADDRESS>
+```
+
+### Testnet (Chain ID 968)
+```bash
+npm run deploy:testnet
+npm run verify:testnet <CONTRACT_ADDRESS>
+```
    ```
 4. The script deploys `RentRoll.sol` to Botchain Testnet, logs the deployed address, and automatically updates `NEXT_PUBLIC_CONTRACT_ADDRESS` in `.env`.
 

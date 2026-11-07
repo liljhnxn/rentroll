@@ -14,21 +14,28 @@ async function main() {
     process.exit(1);
   }
 
-  console.log("--------------------------------------------------");
-  console.log("Deploying RentRoll contract with account:", deployer.address);
+  const network = await ethers.provider.getNetwork();
+  const feeData = await ethers.provider.getFeeData();
   const balance = await ethers.provider.getBalance(deployer.address);
-  console.log("Account balance:", ethers.formatEther(balance), "BOHR");
+
+  console.log("--------------------------------------------------");
+  console.log("Target Network Chain ID:", network.chainId.toString());
+  console.log("Deployer Address:", deployer.address);
+  console.log("Deployer Balance:", ethers.formatEther(balance));
+  console.log("Current Gas Price:", feeData.gasPrice ? ethers.formatUnits(feeData.gasPrice, "gwei") + " gwei" : "N/A");
   console.log("--------------------------------------------------");
 
   const RentRollFactory = await ethers.getContractFactory("RentRoll");
-  console.log("Deploying RentRoll contract...");
+  console.log("Deploying RentRoll contract with minimal gas...");
+
   const rentRoll = await RentRollFactory.deploy();
 
   await rentRoll.waitForDeployment();
   const contractAddress = await rentRoll.getAddress();
 
+  console.log("==================================================");
   console.log("RentRoll successfully deployed to:", contractAddress);
-  console.log("--------------------------------------------------");
+  console.log("==================================================");
 
   // Update or append NEXT_PUBLIC_CONTRACT_ADDRESS in .env
   const envPath = path.join(process.cwd(), ".env");
@@ -47,7 +54,7 @@ async function main() {
   }
 
   fs.writeFileSync(envPath, envContent.trim() + "\n");
-  console.log("Saved deployed contract address to .env");
+  console.log("Updated NEXT_PUBLIC_CONTRACT_ADDRESS in .env");
 }
 
 main().catch((error) => {

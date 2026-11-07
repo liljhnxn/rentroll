@@ -126,7 +126,7 @@ export function RentalLookup() {
       {isLoading && (
         <div className="p-8 text-center rounded-xl bg-charcoal-850/60 border border-charcoal-750">
           <Loader2 className="w-6 h-6 animate-spin text-indigo-400 mx-auto mb-2" />
-          <p className="text-xs text-neutral-400">Querying Botchain Testnet for Rental ID #{activeRentalId?.toString()}...</p>
+          <p className="text-xs text-neutral-400">Querying Botchain Mainnet for Rental ID #{activeRentalId?.toString()}...</p>
         </div>
       )}
 
@@ -189,7 +189,7 @@ export function RentalLookup() {
                 Rent Amount
               </span>
               <p className="font-mono text-base font-bold text-white">
-                {formatRent(rental.rentAmount)} <span className="text-xs font-normal text-neutral-400">BOHR</span>
+                {formatRent(rental.rentAmount)} <span className="text-xs font-normal text-neutral-400">BOT</span>
               </p>
             </div>
 

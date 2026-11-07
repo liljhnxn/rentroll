@@ -104,7 +104,7 @@ export function DashboardOverview({ refreshTrigger }: { refreshTrigger?: number 
     },
     {
       label: "Recorded Rent Volume",
-      value: isLoadingAll ? "..." : `${formatRent(totalAmountWei)} BOHR`,
+      value: isLoadingAll ? "..." : `${formatRent(totalAmountWei)} BOT`,
       subtext: "Total monthly rental value",
       icon: Coins,
       iconBg: "bg-indigo-500/10 text-indigo-400",
@@ -120,7 +120,7 @@ export function DashboardOverview({ refreshTrigger }: { refreshTrigger?: number 
             Dashboard Overview
           </h2>
           <p className="text-xs text-neutral-400">
-            Real-time on-chain statistics from Botchain Testnet
+            Real-time on-chain statistics from Botchain Mainnet
           </p>
         </div>
         <button

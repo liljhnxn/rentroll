@@ -93,11 +93,11 @@ export default function RentRollApp() {
           <div className="flex items-center gap-5 text-[11px]">
             <div className="flex items-center gap-1.5 text-neutral-300">
               <Network className="w-3.5 h-3.5 text-brand-purple" />
-              <span>Botchain Testnet (Chain ID: 968)</span>
+              <span>Botchain Mainnet (Chain ID: 677)</span>
             </div>
             {DEFAULT_CONTRACT_ADDRESS !== "0x0000000000000000000000000000000000000000" && (
               <a
-                href={`https://scan.bohr.life/address/${DEFAULT_CONTRACT_ADDRESS}`}
+                href={`https://scan.botchain.ai/address/${DEFAULT_CONTRACT_ADDRESS}`}
                 target="_blank"
                 rel="noreferrer"
                 className="flex items-center gap-1 text-neutral-400 hover:text-white transition font-mono"
@@ -107,12 +107,12 @@ export default function RentRollApp() {
               </a>
             )}
             <a
-              href="https://scan.bohr.life"
+              href="https://scan.botchain.ai"
               target="_blank"
               rel="noreferrer"
               className="flex items-center gap-1 text-neutral-400 hover:text-white transition"
             >
-              <span>BohrScan Explorer</span>
+              <span>BotchainScan Explorer</span>
               <ExternalLink className="w-3 h-3" />
             </a>
           </div>

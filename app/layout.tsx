@@ -5,7 +5,7 @@ import { Providers } from "@/components/Providers";
 export const metadata: Metadata = {
   title: "RentRoll — On-chain Rental Payment Records",
   description:
-    "Lightweight on-chain rental record dApp for landlords and property managers on Botchain Testnet.",
+    "Lightweight on-chain rental record dApp for landlords and property managers on Botchain Mainnet.",
   icons: {
     icon: "/favicon.svg",
   },

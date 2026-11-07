@@ -182,7 +182,7 @@ export function MyRentals({ onRefreshStats }: MyRentalsProps) {
           <Home className="w-10 h-10 text-neutral-400 mx-auto mb-3" />
           <h4 className="text-sm font-medium text-neutral-200">No Rental Records Found</h4>
           <p className="text-xs text-neutral-400 max-w-sm mx-auto mt-1 mb-4">
-            You haven't registered any rental properties on Botchain Testnet yet. Use the registration form above to get started.
+            You haven't registered any rental properties on Botchain Mainnet yet. Use the registration form above to get started.
           </p>
         </div>
       )}
@@ -253,7 +253,7 @@ export function MyRentals({ onRefreshStats }: MyRentalsProps) {
                     <div className="flex justify-between">
                       <span className="text-neutral-400">Rent Amount:</span>
                       <span className="font-mono font-medium text-white">
-                        {formatRent(rental.rentAmount)} BOHR
+                        {formatRent(rental.rentAmount)} BOT
                       </span>
                     </div>
                     <div className="flex justify-between">
